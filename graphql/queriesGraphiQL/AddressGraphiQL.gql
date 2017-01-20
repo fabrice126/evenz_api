@@ -1,0 +1,113 @@
+
+################################
+###### FIND BY ID ADDRESS ######
+################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+query findAddressById($id: ID!) {
+  address(id: $id) {
+    _id
+    streetNumber
+    streetName
+    city
+    state
+    zipcode
+    country
+    location
+  } 
+}
+################################
+###### FIND ALL ADDRESSES ######
+################################
+query findAllAddresses {
+  addresses {
+    _id
+    streetNumber
+    streetName
+    city
+    state
+    zipcode
+    country
+    location
+  }
+}
+############################
+###### INSERT ADDRESS ######
+############################
+mutation insertAddress1 {
+  addAddress(
+    data:{
+      streetNumber:"16",
+      streetName:"aStreetName1",
+      city:"New-York",
+      state:"New-York",
+      zipcode:"aZipCode1",
+      country: "Etats-Unis",
+      location:[40.753863, -73.990619]
+    }
+  )
+}
+mutation insertAddress2 {
+  addAddress(
+    data:{
+      streetNumber:"22",
+      streetName:"aStreetName2",
+      city:"Paris",
+      zipcode:"75023",
+      country: "France",
+    }
+  )
+}
+mutation insertAddress3 {
+  addAddress(
+    data:{
+      streetNumber:"34",
+      streetName:"aStreetName3",
+      city:"Los-Angeles",
+      state:"Californie",
+      zipcode:"aZipCode3",
+      country: "France"
+    }
+  )
+}
+mutation insertAddress4 {
+  addAddress(
+    data:{
+      streetNumber:"56",
+      streetName:"aStreetName4",
+      city:"Los-Angeles",
+      state:"Californie",
+      zipcode:"aZipCode4",
+      country: "Etats-Unis",
+      location:[20.753863, -76.990619]
+    }
+  )
+}
+
+##################################
+###### DELETE BY ID ADDRESS ######
+##################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+mutation removeAddress($id: ID!) {
+  removeAddress(_id:$id) {
+    _id
+    streetNumber
+    streetName
+    city
+    state
+    zipcode
+    country
+    location
+  }
+}
+##################################
+###### DELETE ALL ADDRESSES ######
+##################################
+mutation removeAllAddresses{
+  removeAllAddresses
+}

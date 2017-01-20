@@ -1,0 +1,81 @@
+
+#################################
+###### FIND BY ID BLOGPOST ######
+#################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+query findBlogPostById($id: ID!) {
+  blogPost(id: $id) {
+    _id,
+    title,
+    description
+  }
+}
+################################
+###### FIND ALL BLOGPOSTS ######
+################################
+
+query findAllBlogPost {
+  blogPosts{
+    _id,
+    title,
+    description
+  }
+}
+#############################
+###### INSERT BLOGPOST ######
+#############################
+mutation insertBlogPost1 {
+  addBlogPost(
+    data:{
+      title:"Mon 1er titre de blog post",
+      description:"une 1er description",
+    }
+  )
+}
+mutation insertBlogPost2 {
+  addBlogPost(
+    data:{
+      title:"Mon 2eme titre de blog post",
+      description:"une 2eme description",
+    }
+  )
+}
+mutation insertBlogPost3 {
+  addBlogPost(
+    data:{
+      title:"Mon 3eme titre de blog post",
+      description:"une 3eme description",
+    }
+  )
+}
+mutation insertBlogPost4 {
+  addBlogPost(
+    data:{
+      title:"Mon 4eme titre de blog post",
+      description:"une 4eme description",
+    }
+  )
+}
+###################################
+###### DELETE BY ID BLOGPOST ######
+###################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+mutation removeBlogPost($id: ID!) {
+  removeBlogPost(_id:$id){
+    _id,
+    title,
+    description
+  }
+}
+##################################
+###### DELETE ALL BLOGPOSTS ######
+##################################
+mutation removeAllBlogPost{
+  removeAllBlogPosts
+}

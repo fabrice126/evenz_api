@@ -1,0 +1,103 @@
+
+################################
+###### FIND BY ID COMMENT ######
+################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+query findCommentById($id: ID!) {
+  comment(id: $id) {
+    _id
+    title
+    message
+    _Owner
+  } 
+}
+###################################
+###### FIND BY OWNER COMMENT ######
+###################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+query findCommentById($id: ID!) {
+  commentsOwner(_Owner: $id) {
+    _id
+    title
+    message
+    _Owner
+  } 
+}
+###############################
+###### FIND ALL COMMENTS ######
+###############################
+query findAllComments {
+  comments {
+    _id
+    title
+    message
+    _Owner
+  } 
+}
+############################
+###### INSERT COMMENT ######
+############################
+mutation insertComment1 {
+  addComment(
+    data:{
+    title: "Super activité",
+    message: "Nous venons de rentrer d'une super randonnée avec des personnes vraiment cool",
+    _Owner: "5880e2ea28d8674560f178cf"
+    }
+  )
+}
+mutation insertComment2 {
+  addComment(
+    data:{
+    title: "NUUUUL",
+    message: "jé trouvé se coquetél trop nul",
+    _Owner: "5880e2eb28d8674560f178d0"
+    }
+  )
+}
+mutation insertComment3 {
+  addComment(
+    data:{
+    title: "ct cool cette fois",
+    message: "7 fois ct pas comme la derniere fois et ct super cool",
+    _Owner: "5880e2eb28d8674560f178d0"
+    }
+  )
+}
+mutation insertComment4 {
+  addComment(
+    data:{
+    title: "Toujours de très bonnes activités proposées par cette personne",
+    message: "Je recommande cette organisateur d'évenement",
+    _Owner: "5880e2ea28d8674560f178cf"
+    }
+  )
+}
+
+##################################
+###### DELETE BY ID COMMENT ######
+##################################
+## PARAM
+# {
+#   "id": "587cc766c45c91272460554a"
+# }
+mutation removeComment($id: ID!) {
+  removeComment(_id:$id) {
+    _id
+    title
+    message
+    _Owner
+  } 
+}
+#################################
+###### DELETE ALL COMMENTS ######
+#################################
+mutation removeAllComments{
+  removeAllCommentes
+}
