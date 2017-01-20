@@ -7,7 +7,7 @@
 *3.2.* (facultatif mais conseillé) Installer robomongo : *<a href="https://robomongo.org/" target="_blank">ici</a>*  
 4. Lancer le serveur node js  
 *4.1.* En ligne de commande : `cd C:/Users/user/Documents/evenz`  
-*4.2.* Taper la commande : `npm start`
+*4.2.* Taper la commande : `npm start`  
 *4.3.* Si ça ne fonctionne pas : taper `npm install` en ligne commande dans le projet evenz (voir 4.1.) cela installera les dépendances du projet  
 *5.3.* Le serveur est maintenant lancé sur *http://localhost:3000/* (dans le navigateur)  
 
